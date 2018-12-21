@@ -104,4 +104,36 @@ some options:
 - Great for cross-device testing
 - Integrates with Webpack, Express
 
+### Sharing work-in-progress
+
+[localtunnel](https://localtunnel.github.io/www/)
+    - Easily share work on your local machine
+    _Easiest setup, ULTRA versatile_
+    __setup__:
+        1. npm install localtunnel -g
+        2. Start your app
+        3. lt -port 3000
+[ngrock](https://ngrok.com/)
+    - Secure tunnel to your local machine
+    _Easy setup, secure_
+    __setup__:
+        1. Sign up
+        2. Install ngrock
+        3. Install authtoken
+        4. Start your app
+        5. ../ngrock http 80
+[now](https://zeit.co/now)
+    _No firewall hole, Hosting persist_
+    __setup__:
+        1. npm install -g now
+        2. Create start script
+        3. now   
+[surge](https://surge.sh/)
+    _No firewall hole, Hosting persist, only static files_
+    __setup__:
+        1. npm install -g surge
+        2. surge
+
+    
+
 
