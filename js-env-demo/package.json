@@ -2,7 +2,13 @@
   "name": "javascript-development-environment",
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
-  "scripts": {},
+  "scripts": {
+    "prestart" : "node buildScripts/srcMessaje.js",
+    "start" : "npm-run-all --parallel open:src",
+    "share" : "npm-run-all --parallel open:src localtunnel",
+    "localtunnel" : "lt --port:3000",
+    "open:src" : "node buildScripts/srcServer.js"
+  },
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {

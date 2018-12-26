@@ -138,3 +138,73 @@ _No firewall hole, Hosting persist, only static files_
  __setup__:
    1. npm install -g surge
    2. surge
+
+
+### Automation
+
+[Grunt](https://gruntjs.com/)
+
+   * The "original"
+   * Configuration over code
+   * Writes intermediary files between steps
+   * Large plugin ecosystems
+
+[Gulp](https://gulpjs.com/)
+
+   * In-memory streams
+   * Fast
+   * Code over configuration
+   * Large Plugin ecosystems
+
+[Npm scripts](https://docs.npmjs.com/misc/scripts)
+ 
+   * Declared in package.json
+   * Leverage your OS´s command line
+   * Directly use npm packages
+   * Call separate Node scripts
+   * Convention-based pre/post hocks
+   * Leverage world´s largest package manager
+   - Use tools directly
+   - No need for separate plugins
+   - Simpler debugging
+   - Better docs
+   - Easy to learn
+   - Simple
+
+   _start_ and _test_ are by convention, the scripts for start and test the application. So:
+
+``` bash
+   npm start
+   # Is equivalent for
+   npm run start
+
+   npm test
+   # Is equivalent for
+   npm run test    
+ ```
+
+__Pre/Post Hooks__
+
+npm scripts supports conventions base pre and post hooks.
+_Any scripts with the prefix pre, will run beofre the sxcript with the same name_
+
+
+``` json
+{
+   "scripts" : {
+      "prestart" : "commnand", //This run before automatically when run npm start
+      "start" : "command",
+      "poststart" : "command" //This run after automatically when run npm start
+   }   
+}
+ ```
+
+ __Parallel Tasks__
+
+``` bash
+   npm-run-all task1 task2 task3
+   # run all the task list after
+
+   npm-run-all --parallel task1 task2 task3
+   # run all the task in parallel
+```
