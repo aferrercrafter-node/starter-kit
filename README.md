@@ -208,3 +208,77 @@ _Any scripts with the prefix pre, will run beofre the sxcript with the same name
    npm-run-all --parallel task1 task2 task3
    # run all the task in parallel
 ```
+
+### Transpiling
+
+[What and Why](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them)
+
+1997 -> 1998 -> 1999 -> 2009 -> 2015        -> 2016        -> 2018
+ES1  -> ES2  -> ES3  -> ES5  -> ES6(ES2015) -> ES7(ES2016) -> ES8(ES2017)
+
+[List of lenguajes](https://github.com/jashkenas/coffeescript/wiki/List-of-languages-that-compile-to-JS)
+
+[Typescript](https://www.typescriptlang.org/)
+* Enhanced Autocomplete
+* Enhanced Readability
+* Safer refactoring
+* Additional non-standard features
+
+[Babel](https://babeljs.io/)
+* Write standarized JS
+* Leverage full JS Ecosystem
+* Use experimental features earlier
+* No types defs, annotarions required
+* ES6 imports are statically analizable
+* Test, Lint, Babel, Great libs, IDE = safety
+
+[ELM](https://elm-lang.org/)
+* Compiles down to JS
+* Clean Syntax
+* Inmutable data structures
+* Friendly errors
+* All errors are compile-time errors
+* Interop with js
+
+__Babel configuration styles__
+
+_.babelsrc_
+* Not npm specific
+* Easier to read since isolated
+
+_package.json_
+* One less file in your project
+
+``` json
+{
+   "name": "my-package",
+   "version": "1.0.0",
+   "babel": {
+      // my babel config here
+   }
+}
+``` 
+
+__Babel Plugins__
+
+Allow Stage-X (Experimental-presets) features of javascript
+
+__transpile for your enviroment__
+
+_Preset_                    / _Approach_
+babel-preset-es2015-node    / Version Detection  (Node)
+babel-preset-latest-minimal / Feature Detection  (Electron)
+
+Allow to compile only the needed js
+
+__Build Script JS Style__
+
+_ES5_
+* No waiting for transpile == faster
+* No transpiler dependency
+
+_Transpiled_
+* Enjoy the latest features
+* Consistent coding style
+* Use the same linting rules everywhere
+* Can eventually remove transpiler
