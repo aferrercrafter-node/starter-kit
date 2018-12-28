@@ -7,8 +7,12 @@ import path from 'path';
 //const open = require('open');
 import open from 'open';
 
+import webpack from 'webpack';
+import config from '../webpack.config.dev';
+
 const port = 3000;
 const app = express();
+const compiler = webpack(config);
 
 app.get('/', (req, res) => {
   res.sendfile(path.join(__dirname, '../src/index.html'));

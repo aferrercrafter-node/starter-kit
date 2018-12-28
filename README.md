@@ -282,3 +282,101 @@ _Transpiled_
 * Consistent coding style
 * Use the same linting rules everywhere
 * Can eventually remove transpiler
+
+### Bundling
+
+__Why bundle?__
+
+* CommonJS doesn't work in web browsers
+* Package project into file(s)
+* Improve node performance
+
+__Module Formats__
+
+5 Module Formats
+
+* Universal Module Definition (UMD) _past_
+``` javascript
+myGlobal; //Not sure if is UMD
+```
+
+* IIFE _past_
+``` javascript
+(function() {
+   //my code here
+})
+```
+
+* Asyncrhonous Module Definition (AMD) _past_
+``` javascript
+define(['jq'], function(jq) {});
+```
+
+* CommonJS (CJS)
+``` javascript
+var jquery = require('jquery')
+```
+
+* ES6 Modules
+``` javascript
+import jquery from 'jquery'
+```
+
+__Why use ES6 Modules?__
+
+* Standarized
+* Statically analyzable
+   - Improved autocomplete
+   - Intelligent refactoring
+   - Fail fast
+   - Tree shaking (eliminate unused code)
+* Easy to read
+   - Named imports
+   - Default exports
+
+__Selecting Boundler__
+
+* Require.js
+   - _First popular boundler_
+   - Utilizes and helped popularize AMD pattern
+
+* Browserify 
+   - _simple_
+   - The first boundler to reach mass adoption
+   - Boundle npm packages for the web
+   - Large plugin ecosystem
+
+* Webpack
+   - _Comprehensive_
+   - Bundles more than just JS
+   - Import CSS, images, etc like JS
+   - Built-in hot-reloading web server
+
+* Rollup
+   - _Tree-shaking performance_
+   - Tree shaking
+   - Fast loader production code
+   - Quite new
+   - Great for library authors
+   - No hot-reloading and code splitting yet
+
+* JSPM 
+   - _Runtime loader, package manager_
+   - Use SystemJS, a universal module loader
+   - Can load modules at runtime
+   - Has it´s own package manager
+   - Can install from npm, git
+   - Uses Rollup
+
+__Why Webpack?__
+
+* Much more than just JS
+   - CSS
+   - Images
+   - HTML
+   - Fonts
+* Bundle splitting
+* Hot module reloading
+* Webpack 2 offers tree shaking
+* More popular
+
