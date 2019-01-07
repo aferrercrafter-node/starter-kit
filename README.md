@@ -380,3 +380,14 @@ __Why Webpack?__
 * Webpack 2 offers tree shaking
 * More popular
 
+__Sourcemap__
+_Who do I debug transpiled and bundled code?_
+
+* Maps codeback to original source
+* Part of our build
+* Downloaded if you open developers tools _(So only downloaded when you need it)_
+
+[Webpack devtools](https://webpack.js.org/configuration/devtool/)
+
+
+

@@ -14,6 +14,11 @@ const port = 3000;
 const app = express();
 const compiler = webpack(config);
 
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath
+}))
+
 app.get('/', (req, res) => {
   res.sendfile(path.join(__dirname, '../src/index.html'));
 });
