@@ -389,5 +389,89 @@ _Who do I debug transpiled and bundled code?_
 
 [Webpack devtools](https://webpack.js.org/configuration/devtool/)
 
+### Linting
+
+__Why Lint?__
+
+_Enforce Consistency_
+* Curly brace position
+* confirm / alert
+* Trailing commas
+* Globals
+* eval
+
+_Avoid Mistakes_
+* Extra parenthesis
+* Overwriting function
+* Assignment in conditional
+* Missing default case in switch
+* debugger / console.lg
+
+__Pick a Linter__
+
+* JSLint
+* JSHint
+* ESLint (_use this one_)
+* TSLint (_use TSLint until ESLint add support for typescript_)
+
+__Configuring ESLint__
+
+_Config format?_
+
+* Dedicated config file
+   - Not tied to NPM
+* package.json
+   - One less file
+
+``` json
+{
+    "name": "mypackage",
+    "version": "0.0.1",
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "node": true
+        }
+    }
+}
+```
+
+_Wich built-in rules_
+
+* [ESLint Rules](https://eslint.org/docs/rules/)
+
+_Warning or errors_
+
+* Warning
+   - Can continue development
+   - Can be ignored
+   - Team must agree: fix warnings
+* Errors
+   - Breaks the build
+   - Can´t be ignores
+   - Team is forced to comply
+
+_Which plugins_
+   * [List of ESLint Plugins](https://github.com/dustinspecker/awesome-eslint)
+      - eslint-plugin-react
+      - eslint-plugin-angular
+      - eslint-plugin-node
+
+_Use preset instead_
+   * From Scratch
+   * Recommended
+   * Presets (Airbnb, XO, Standard JS)
+
+__Watching files__
+
+   * eslint-loader
+      - re-lints all files upon save
+   * eslint-watch
+      - ESLint wrapper that adds file watch
+      - Not tied to webpack
+      - Better error/warning formatting
+      - Displays clean message
+      - Easily lint tests and build scripts too
+
 
 
